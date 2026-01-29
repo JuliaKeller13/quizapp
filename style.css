@@ -21,12 +21,12 @@ body {
   padding: 25px;
 }
 
-.answer-card:hover{
-    cursor: pointer;
+.answer-card:hover {
+  cursor: pointer;
 }
 
 .btn-gard {
-    background: #57c7a2;
+  background: #57c7a2;
   background: linear-gradient(
     163deg,
     rgba(87, 199, 162, 1) 23%,
@@ -40,4 +40,19 @@ body {
   padding: 8px;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.progress{
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  --bs-progress-border-radius: none;
+}
+
+.progress-bar-fill {
+  width: 0%;
+  height: 5px;
+  background: #9574d8;
+  border-radius: 8px;
+  transition: width 0.3s;
 }

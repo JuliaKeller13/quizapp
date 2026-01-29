@@ -18,17 +18,15 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-    <script src="./script.js"></script>
   </head>
-  <body>
+  <body onload="init()">
     <main>
-      <!-- <h1>Hallo, Julia!</h1> -->
       <section class="quiz-card">
         <div class="card">
-          <div class="progress">
-
+          <div class="progress" id="progress"></div>
+          <div id="progress-bar-container">
+            <div id="progressBarFill" class="progress-bar-fill"></div>
           </div>
-
 
           <div class="card-body shadow">
             <h5 class="card-title">Frage</h5>
@@ -51,5 +49,7 @@
         </div>
       </section>
     </main>
+    <script src="./scripts/db.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>

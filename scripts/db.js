@@ -1,7 +1,4 @@
 let questions = [
-{
-  "quizTitle": "Modern JavaScript Mastery",
-  "questions": [
     {
       "id": 1,
       "question": "Welches Keyword ermöglicht es, einer Variable später einen neuen Wert zuzuweisen?",
@@ -102,6 +99,4 @@ let questions = [
         {"text": "unshift()", "isCorrect": false, "feedback": "unshift() fügt es am Anfang hinzu."}
       ]
     }
-  ]
-}
 ];
