@@ -13,10 +13,11 @@ let questions = [
       "id": 2,
       "question": "Wie sieht die korrekte Syntax für einen Ternary Operator aus?",
       "options": [
-        {"text": "condition ? true : false", "isCorrect": true, "feedback": "Genau! Es ist die Kurzform für ein if-else Statement."},
         {"text": "condition : true ? false", "isCorrect": false, "feedback": "Falsch. Das Fragezeichen muss vor dem ersten Ausdruck stehen."},
+        {"text": "condition ?? true", "isCorrect": false, "feedback": "Das ist der Nullish Coalescing Operator, nicht der Ternary Operator."},
         {"text": "if (condition) { true }", "isCorrect": false, "feedback": "Das ist ein normales if-Statement, kein Ternary Operator."},
-        {"text": "condition ?? true", "isCorrect": false, "feedback": "Das ist der Nullish Coalescing Operator, nicht der Ternary Operator."}
+        {"text": "condition ? true : false", "isCorrect": true, "feedback": "Genau! Es ist die Kurzform für ein if-else Statement."},
+
       ]
     },
     {
@@ -34,8 +35,8 @@ let questions = [
       "question": "Was ist das Ergebnis von '2' + 2?",
       "options": [
         {"text": "4", "isCorrect": false, "feedback": "Leider nein. Da ein Operand ein String ist, findet kein Mathe statt."},
-        {"text": "22", "isCorrect": true, "feedback": "Richtig! JavaScript verbindet (konkateniert) hier einfach die beiden Zeichen."},
         {"text": "NaN", "isCorrect": false, "feedback": "NaN tritt auf, wenn Mathe fehlschlägt. Hier wird es aber einfach als Text behandelt."},
+        {"text": "22", "isCorrect": true, "feedback": "Richtig! JavaScript verbindet (konkateniert) hier einfach die beiden Zeichen."},
         {"text": "Error", "isCorrect": false, "feedback": "Kein Error. JS ist flexibel (oder verrückt) genug, das zu berechnen."}
       ]
     },
@@ -64,9 +65,9 @@ let questions = [
       "question": "Wie sieht die Syntax einer Arrow-Function aus?",
       "options": [
         {"text": "function() => {}", "isCorrect": false, "feedback": "Das Keyword 'function' wird bei Arrow Functions weggelassen."},
-        {"text": "() => {}", "isCorrect": true, "feedback": "Korrekt! Das ist die moderne Kurzschreibweise."},
         {"text": "=> () {}", "isCorrect": false, "feedback": "Falsche Reihenfolge. Die Klammern kommen zuerst."},
-        {"text": "call => {}", "isCorrect": false, "feedback": "Nein, das ist keine gültige Deklaration."}
+        {"text": "call => {}", "isCorrect": false, "feedback": "Nein, das ist keine gültige Deklaration."},
+        {"text": "() => {}", "isCorrect": true, "feedback": "Korrekt! Das ist die moderne Kurzschreibweise."},
       ]
     },
     {

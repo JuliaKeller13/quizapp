@@ -14,6 +14,14 @@ body {
   width: 40rem;
 }
 
+.card-title {
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .card-body {
   display: flex;
   flex-direction: column;
@@ -23,9 +31,10 @@ body {
 
 .answer-card:hover {
   cursor: pointer;
+  background-color: #e9ecef85;
 }
 
-.btn-gard {
+.main-btn {
   background: #57c7a2;
   background: linear-gradient(
     163deg,
@@ -37,12 +46,12 @@ body {
   font-size: 18px;
   border: none;
   border-radius: 6px;
-  padding: 8px;
+  padding: 12px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.progress{
+.progress {
   justify-content: center;
   align-items: center;
   padding: 15px;
@@ -56,3 +65,17 @@ body {
   border-radius: 8px;
   transition: width 0.3s;
 }
+
+.correct {
+  border: solid 2px #57c7a29d;
+}
+
+.wrong {
+  background-color: #dadde09d;
+  color: #ec5a66 !important;
+}
+
+.d-none {
+  display: none;
+}
+

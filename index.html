@@ -29,22 +29,22 @@
           </div>
 
           <div class="card-body shadow">
-            <h5 class="card-title">Frage</h5>
+            <h5 class="card-title" id="questionBox">Frage</h5>
 
-            <div class="card shadow answer-card">
-              <div class="card-body">Antwort</div>
+            <div class="card" onclick="answer(0)">
+              <div class="card-body shadow-sm answer-card" id="option1">Antwort</div>
             </div>
-            <div class="card">
-              <div class="card-body shadow answer-card">Antwort</div>
+            <div class="card" onclick="answer(1)">
+              <div class="card-body shadow-sm answer-card" id="option2">Antwort</div>
             </div>
-            <div class="card">
-              <div class="card-body shadow answer-card">Antwort</div>
+            <div class="card" onclick="answer(2)">
+              <div class="card-body shadow-sm answer-card" id="option3">Antwort</div>
             </div>
-            <div class="card">
-              <div class="card-body shadow answer-card">Antwort</div>
+            <div class="card" onclick="answer(3)">
+              <div class="card-body shadow-sm answer-card" id="option4">Antwort</div>
             </div>
-
-            <button type="button" class="btn-gard shadow">Nächste Frage</button>
+            <button type="button" class="main-btn shadow" id="nextBtn" onclick="nextQuestion()">Weiter</button>
+            <div class="card-body shadow-sm answer-card d-none" id="feedbackBox">Feedback</div>
           </div>
         </div>
       </section>
