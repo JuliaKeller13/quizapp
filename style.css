@@ -10,8 +10,16 @@ body {
   min-height: 100vh;
 }
 
+.topic-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 .quiz-card {
   width: 40rem;
+  min-height: 60vh !important;
 }
 
 .card-title {
@@ -80,13 +88,13 @@ body {
 }
 
 .no-pointer {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .is-inactive {
-    background-color: #dadde09d !important;
-    opacity: 0.6;
-    filter: grayscale(1);
+  background-color: #dadde09d !important;
+  opacity: 0.6;
+  filter: grayscale(1);
 }
 
 main canvas {

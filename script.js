@@ -1,19 +1,67 @@
 let currentQuestionIndex = 0;
 let rightQuestions = 0;
-const allQuestions = questions.length;
+let questions = [];
+const quizContainer = document.getElementById('quizContainer');
 
 function init() {
-  showProgress(currentQuestionIndex);
+  renderQuizStartCard()
+  // showProgress(currentQuestionIndex);
+  // showQuestion();
 }
 
-function showProgress(currentIndex) {
-  const currentNumber = currentIndex + 1;
-  
-  document.getElementById("progress").innerHTML = `<span>${currentNumber} von ${allQuestions} Fragen</span>`;
-  document.getElementById("progressBarFill").style.width = (currentNumber / allQuestions) * 100 + "%";
-
-  showQuestion();
+function renderQuizStartCard() {
+    quizContainer.innerHTML = `
+        <div class=" card card-body shadow">
+            <h1>Willkommen beim Quiz!</h1>
+            <p>Wähle ein Thema, um zu starten:</p>
+            <div>
+                <button class="main-btn shadow" onclick="startQuiz('js')">JavaScript</button>
+                <button class="main-btn shadow" onclick="startQuiz('html')">HTML</button>
+                <button class="main-btn shadow" onclick="startQuiz('css')">CSS</button>
+            </div>
+        </div>
+    `;
 }
+
+function startQuiz(topic) {
+    questions = allTopicQuestions.filter(q => q.topic === topic);
+    totalQuestionsCount = questions.length;
+    currentQuestionIndex = 0;
+    rightQuestions = 0;
+    renderQuizCard(currentQuestionIndex);
+    showProgress(0);
+    showQuestion();
+}
+
+function renderQuizCard() {
+  quizContainer.innerHTML = `
+    <div class="card">
+          <div class="progress" id="progress"></div>
+          <div id="progress-bar-container">
+            <div id="progressBarFill" class="progress-bar-fill"></div>
+          </div>
+
+          <div class="card-body shadow">
+            <h5 class="card-title" id="questionBox">Frage</h5>
+
+            <div class="card" onclick="answer(0)">
+              <div class="card-body shadow-sm answer-card" id="option1">Antwort</div>
+            </div>
+            <div class="card" onclick="answer(1)">
+              <div class="card-body shadow-sm answer-card" id="option2">Antwort</div>
+            </div>
+            <div class="card" onclick="answer(2)">
+              <div class="card-body shadow-sm answer-card" id="option3">Antwort</div>
+            </div>
+            <div class="card" onclick="answer(3)">
+              <div class="card-body shadow-sm answer-card" id="option4">Antwort</div>
+            </div class="topic-section">
+            <button disabled type="button" class="main-btn shadow" id="nextBtn" onclick="nextQuestion()">Weiter</button>
+            <div class="card-body shadow-sm answer-card d-none" id="feedbackBox">Feedback</div>
+          </div>
+        </div>
+  `;
+};
 
 function showQuestion() {
   let question = questions[currentQuestionIndex];
@@ -22,6 +70,13 @@ function showQuestion() {
   document.getElementById("option2").innerHTML = question.options[1].text;
   document.getElementById("option3").innerHTML = question.options[2].text;
   document.getElementById("option4").innerHTML = question.options[3].text;
+}
+
+function showProgress(currentIndex) {
+  const currentNumber = currentIndex + 1;
+  const oneTopicQuestions = questions.length;
+  document.getElementById("progress").innerHTML = `<span>${currentNumber} von ${oneTopicQuestions} Fragen</span>`;
+  document.getElementById("progressBarFill").style.width = (currentNumber / oneTopicQuestions) * 100 + "%";
 }
 
 function answer(selection) {
@@ -49,6 +104,7 @@ function nextQuestion() {
     document.getElementById("feedbackBox").classList.add("d-none");
     resetClasses();
     showProgress(currentQuestionIndex);
+    showQuestion();
   } else {
     showEndScreen();
     congratulations();
@@ -88,7 +144,7 @@ function getResultHtml(){
     return `
         <div class="text-center">
             <h2>Quiz beendet</h2>
-            <p>Du hast <b>${rightQuestions}</b> von <b>${allQuestions}</b> Fragen richtig beantwortet</p>
+            <p>Du hast <b>${rightQuestions}</b> von <b>${questions.length}</b> Fragen richtig beantwortet</p>
             <div class="cup">
                 <img src="./imgs/cup.PNG" alt="Ein Pokal">
             </div>
