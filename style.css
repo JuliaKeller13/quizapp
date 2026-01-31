@@ -31,7 +31,6 @@ body {
 .quiz-card {
   width: 40rem;
   max-width: 40dvw;
-  min-width: 20dvw;
   min-height: 60dvh !important;
 }
 
