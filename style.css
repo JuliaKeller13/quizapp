@@ -7,7 +7,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
 }
 
 .topic-section {
@@ -17,9 +18,19 @@ body {
   align-items: center;
 }
 
+.small-icon{
+  height: 50px;
+  width: 50px;
+}
+
+.topics{
+  display: flex;
+  flex-direction: column;
+}
+
 .quiz-card {
-  width: 40rem;
-  min-height: 60vh !important;
+  max-width: 40dvw;
+  min-height: 60dvh !important;
 }
 
 .card-title {

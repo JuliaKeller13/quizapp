@@ -1,36 +1,34 @@
 let currentQuestionIndex = 0;
 let rightQuestions = 0;
 let questions = [];
-const quizContainer = document.getElementById('quizContainer');
+const quizContainer = document.getElementById("quizContainer");
 
 function init() {
-  renderQuizStartCard()
-  // showProgress(currentQuestionIndex);
-  // showQuestion();
+  renderQuizStartCard();
 }
 
 function renderQuizStartCard() {
-    quizContainer.innerHTML = `
+  quizContainer.innerHTML = `
         <div class=" card card-body shadow">
-            <h1>Willkommen beim Quiz!</h1>
-            <p>Wähle ein Thema, um zu starten:</p>
-            <div>
-                <button class="main-btn shadow" onclick="startQuiz('js')">JavaScript</button>
-                <button class="main-btn shadow" onclick="startQuiz('html')">HTML</button>
-                <button class="main-btn shadow" onclick="startQuiz('css')">CSS</button>
+            <h1 class="text-center mt-4">Willkommen beim Quiz! <img class="small-icon" src="./imgs/rocket.PNG" alt="Rakete-Emoji"></h1>
+            <p class="text-center fs-5">Wähle ein Thema aus, um zu starten:</p>
+            <div class="topics">
+              <button class="main-btn shadow flex-grow-1" onclick="startQuiz('html')">HTML</button>
+              <button class="main-btn shadow flex-grow-1" onclick="startQuiz('css')">CSS</button>
+              <button class="main-btn shadow flex-grow-1" onclick="startQuiz('js')">JavaScript</button>
             </div>
         </div>
     `;
 }
 
 function startQuiz(topic) {
-    questions = allTopicQuestions.filter(q => q.topic === topic);
-    totalQuestionsCount = questions.length;
-    currentQuestionIndex = 0;
-    rightQuestions = 0;
-    renderQuizCard(currentQuestionIndex);
-    showProgress(0);
-    showQuestion();
+  questions = allTopicQuestions.filter((q) => q.topic === topic);
+  totalQuestionsCount = questions.length;
+  currentQuestionIndex = 0;
+  rightQuestions = 0;
+  renderQuizCard(currentQuestionIndex);
+  showProgress(0);
+  showQuestion();
 }
 
 function renderQuizCard() {
@@ -40,10 +38,8 @@ function renderQuizCard() {
           <div id="progress-bar-container">
             <div id="progressBarFill" class="progress-bar-fill"></div>
           </div>
-
           <div class="card-body shadow">
             <h5 class="card-title" id="questionBox">Frage</h5>
-
             <div class="card" onclick="answer(0)">
               <div class="card-body shadow-sm answer-card" id="option1">Antwort</div>
             </div>
@@ -61,7 +57,7 @@ function renderQuizCard() {
           </div>
         </div>
   `;
-};
+}
 
 function showQuestion() {
   let question = questions[currentQuestionIndex];
@@ -75,8 +71,10 @@ function showQuestion() {
 function showProgress(currentIndex) {
   const currentNumber = currentIndex + 1;
   const oneTopicQuestions = questions.length;
-  document.getElementById("progress").innerHTML = `<span>${currentNumber} von ${oneTopicQuestions} Fragen</span>`;
-  document.getElementById("progressBarFill").style.width = (currentNumber / oneTopicQuestions) * 100 + "%";
+  document.getElementById("progress").innerHTML =
+    `<span>${currentNumber} von ${oneTopicQuestions} Fragen</span>`;
+  document.getElementById("progressBarFill").style.width =
+    (currentNumber / oneTopicQuestions) * 100 + "%";
 }
 
 function answer(selection) {
@@ -98,7 +96,7 @@ function answer(selection) {
 
 function nextQuestion() {
   currentQuestionIndex++;
-  
+
   if (currentQuestionIndex < questions.length) {
     document.getElementById("nextBtn").disabled = true;
     document.getElementById("feedbackBox").classList.add("d-none");
@@ -131,17 +129,17 @@ function resetClasses() {
 }
 
 function showEndScreen() {
-    document.getElementById("feedbackBox").classList.add("d-none");
-    document.getElementById("nextBtn").classList.add("d-none");
+  document.getElementById("feedbackBox").classList.add("d-none");
+  document.getElementById("nextBtn").classList.add("d-none");
 
-    for (let i = 1; i <= 4; i++) {
-        document.getElementById(`option${i}`).parentElement.classList.add("d-none");
-    }
-    document.getElementById("questionBox").innerHTML = getResultHtml();
+  for (let i = 1; i <= 4; i++) {
+    document.getElementById(`option${i}`).parentElement.classList.add("d-none");
+  }
+  document.getElementById("questionBox").innerHTML = getResultHtml();
 }
 
-function getResultHtml(){
-    return `
+function getResultHtml() {
+  return `
         <div class="text-center">
             <h2>Quiz beendet</h2>
             <p>Du hast <b>${rightQuestions}</b> von <b>${questions.length}</b> Fragen richtig beantwortet</p>
@@ -154,5 +152,10 @@ function getResultHtml(){
 }
 
 function congratulations() {
-  confetti({particleCount: 200, spread: 70, origin: { y: 0.6 }, zIndex: 9999});
+  confetti({
+    particleCount: 200,
+    spread: 70,
+    origin: { y: 0.6 },
+    zIndex: 9999,
+  });
 }

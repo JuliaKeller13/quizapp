@@ -71,10 +71,10 @@ let allTopicQuestions = [
       "question": "Wie sieht die Syntax einer Arrow-Function aus?",
       "topic": "js",
       "options": [
-        {"text": "function() => {}", "isCorrect": false, "feedback": "Das Keyword 'function' wird bei Arrow Functions weggelassen."},
-        {"text": "=> () {}", "isCorrect": false, "feedback": "Falsche Reihenfolge. Die Klammern kommen zuerst."},
-        {"text": "call => {}", "isCorrect": false, "feedback": "Nein, das ist keine gültige Deklaration."},
-        {"text": "() => {}", "isCorrect": true, "feedback": "Korrekt! Das ist die moderne Kurzschreibweise."},
+        {"text": "function() =&gt; {}", "isCorrect": false, "feedback": "Das Keyword 'function' wird bei Arrow Functions weggelassen."},
+        {"text": "=&gt; () {}", "isCorrect": false, "feedback": "Falsche Reihenfolge. Die Klammern kommen zuerst."},
+        {"text": "call =&gt; {}", "isCorrect": false, "feedback": "Nein, das ist keine gültige Deklaration."},
+        {"text": "() =&gt; {}", "isCorrect": true, "feedback": "Korrekt! Das ist die moderne Kurzschreibweise."},
       ]
     },
     {
@@ -116,9 +116,9 @@ let allTopicQuestions = [
     "question": "Wofür steht die Abkürzung HTML?",
     "topic": "html",
     "options": [
-      {"text": "Hypertext Markup Language", "isCorrect": true, "feedback": "Richtig! Es ist die Standard-Auszeichnungssprache für Dokumente im Web."},
       {"text": "Hyperlink und Text Management", "isCorrect": false, "feedback": "Falsch, das 'M' steht für Markup."},
       {"text": "Home Tool Markup Language", "isCorrect": false, "feedback": "Leider nein."},
+      {"text": "Hypertext Markup Language", "isCorrect": true, "feedback": "Richtig! Es ist die Standard-Auszeichnungssprache für Dokumente im Web."},
       {"text": "Hyper Transfer Markup Language", "isCorrect": false, "feedback": "Nicht ganz, Hypertext ist der richtige Begriff."}
     ]
   },
@@ -127,10 +127,10 @@ let allTopicQuestions = [
     "question": "Welches Tag wird verwendet, um die wichtigste Überschrift einer Seite zu definieren?",
     "topic": "html",
     "options": [
-      {"text": "<h1>", "isCorrect": true, "feedback": "Korrekt! <h1> ist die hierarchisch höchste Überschrift."},
-      {"text": "<head>", "isCorrect": false, "feedback": "Nein, <head> enthält Metadaten, keine sichtbaren Überschriften."},
-      {"text": "<h6>", "isCorrect": false, "feedback": "Falsch, <h6> ist die kleinste/unwichtigste Überschriften-Ebene."},
-      {"text": "<header>", "isCorrect": false, "feedback": "<header> ist ein Container für einleitende Inhalte."}
+      {"text": "&lt;h6&gt;", "isCorrect": false, "feedback": "Falsch, &lt;h6&gt; ist die kleinste/unwichtigste Überschriften-Ebene."},
+      {"text": "&lt;h1&gt;", "isCorrect": true, "feedback": "Korrekt! &lt;h1&gt; ist die hierarchisch höchste Überschrift."},
+      {"text": "&lt;head&gt;", "isCorrect": false, "feedback": "Nein, &lt;head&gt; enthält Metadaten, keine sichtbaren Überschriften."},
+      {"text": "&lt;header&gt;", "isCorrect": false, "feedback": "&lt;header&gt; ist ein Container für einleitende Inhalte."}
     ]
   },
   {
@@ -138,10 +138,10 @@ let allTopicQuestions = [
     "question": "Wie erstellt man einen Hyperlink in HTML?",
     "topic": "html",
     "options": [
-      {"text": "<a href='url'>Text</a>", "isCorrect": true, "feedback": "Genau! Das <a> Tag mit dem href-Attribut erzeugt Links."},
-      {"text": "<link url='url'>", "isCorrect": false, "feedback": "Falsch, <link> wird meist im Head für externe Ressourcen wie CSS genutzt."},
-      {"text": "<a>url</a>", "isCorrect": false, "feedback": "Ohne href-Attribut führt der Link nirgendwohin."},
-      {"text": "<href>url</href>", "isCorrect": false, "feedback": "href ist ein Attribut, kein eigenständiges Tag."}
+      {"text": "&lt;link url='url'&gt;", "isCorrect": false, "feedback": "Falsch, &lt;link&gt; wird meist im Head für externe Ressourcen wie CSS genutzt."},
+      {"text": "&lt;a&gt;url&lt;/a&gt;", "isCorrect": false, "feedback": "Ohne href-Attribut führt der Link nirgendwohin."},
+      {"text": "&lt;href&gt;url&lt;/href&gt;", "isCorrect": false, "feedback": "href ist ein Attribut, kein eigenständiges Tag."},
+      {"text": "&lt;a href='url'&gt;Text&lt;/a&gt;", "isCorrect": true, "feedback": "Genau! Das &lt;a&gt; Tag mit dem href-Attribut erzeugt Links."}
     ]
   },
   {
@@ -149,21 +149,21 @@ let allTopicQuestions = [
     "question": "Welches Element wird für eine ungeordnete Liste (mit Aufzählungspunkten) verwendet?",
     "topic": "html",
     "options": [
-      {"text": "<ul>", "isCorrect": true, "feedback": "Korrekt! <ul> steht für 'unordered list'."},
-      {"text": "<ol>", "isCorrect": false, "feedback": "<ol> steht für 'ordered list' (nummeriert)."},
-      {"text": "<li>", "isCorrect": false, "feedback": "<li> definiert die einzelnen Listeneinträge innerhalb einer Liste."},
-      {"text": "<list>", "isCorrect": false, "feedback": "Ein <list> Tag existiert in HTML nicht."}
+      {"text": "&lt;ol&gt;", "isCorrect": false, "feedback": "&lt;ol&gt; steht für 'ordered list' (nummeriert)."},
+      {"text": "&lt;ul&gt;", "isCorrect": true, "feedback": "Korrekt! &lt;ul&gt; steht für 'unordered list'."},
+      {"text": "&lt;li&gt;", "isCorrect": false, "feedback": "&lt;li&gt; definiert die einzelnen Listeneinträge innerhalb einer Liste."},
+      {"text": "&lt;list&gt;", "isCorrect": false, "feedback": "Ein &lt;list&gt; Tag existiert in HTML nicht."}
     ]
   },
   {
     "id": 15,
-    "question": "Welches Attribut wird verwendet, um den Pfad zu einem Bild im <img>-Tag anzugeben?",
+    "question": "Welches Attribut wird verwendet, um den Pfad zu einem Bild im &lt;img&gt;-Tag anzugeben?",
     "topic": "html",
     "options": [
       {"text": "src", "isCorrect": true, "feedback": "Richtig! src steht für 'source' (Quelle)."},
       {"text": "href", "isCorrect": false, "feedback": "href wird für Links verwendet, nicht für Bilder."},
       {"text": "alt", "isCorrect": false, "feedback": "alt definiert den Alternativtext, falls das Bild nicht geladen wird."},
-      {"text": "link", "isCorrect": false, "feedback": "link ist kein Attribut des <img> Tags."}
+      {"text": "link", "isCorrect": false, "feedback": "link ist kein Attribut des &lt;img&gt; Tags."}
     ]
   },
   {
@@ -171,10 +171,10 @@ let allTopicQuestions = [
     "question": "Welches Tag erzeugt einen Zeilenumbruch ohne einen neuen Absatz zu beginnen?",
     "topic": "html",
     "options": [
-      {"text": "<br>", "isCorrect": true, "feedback": "Korrekt! <br> steht für 'break'."},
-      {"text": "<break>", "isCorrect": false, "feedback": "Falsch, das Tag heißt nur <br>."},
-      {"text": "<p>", "isCorrect": false, "feedback": "<p> erzeugt einen neuen Absatz mit Abstand."},
-      {"text": "<lb>", "isCorrect": false, "feedback": "Dieses Tag existiert in HTML nicht."}
+      {"text": "&lt;br&gt;", "isCorrect": true, "feedback": "Korrekt! &lt;br&gt; steht für 'break'."},
+      {"text": "&lt;break&gt;", "isCorrect": false, "feedback": "Falsch, das Tag heißt nur &lt;br&gt;."},
+      {"text": "&lt;p&gt;", "isCorrect": false, "feedback": "&lt;p&gt; erzeugt einen neuen Absatz mit Abstand."},
+      {"text": "&lt;lb&gt;", "isCorrect": false, "feedback": "Dieses Tag existiert in HTML nicht."}
     ]
   },
   {
@@ -182,10 +182,10 @@ let allTopicQuestions = [
     "question": "Welches Element wird benutzt, um ein Formular-Eingabefeld zu erstellen?",
     "topic": "html",
     "options": [
-      {"text": "<input>", "isCorrect": true, "feedback": "Richtig! Mit dem type-Attribut kann man verschiedene Felder definieren."},
-      {"text": "<form>", "isCorrect": false, "feedback": "<form> ist der Container, der die Eingabefelder umschließt."},
-      {"text": "<field>", "isCorrect": false, "feedback": "Falsch, das korrekte Tag ist <input>."},
-      {"text": "<button>", "isCorrect": false, "feedback": "<button> erzeugt eine Schaltfläche, kein Texteingabefeld."}
+      {"text": "&lt;form&gt;", "isCorrect": false, "feedback": "&lt;form&gt; ist der Container, der die Eingabefelder umschließt."},
+      {"text": "&lt;field&gt;", "isCorrect": false, "feedback": "Falsch, das korrekte Tag ist &lt;input&gt;."},
+      {"text": "&lt;button&gt;", "isCorrect": false, "feedback": "&lt;button&gt; erzeugt eine Schaltfläche, kein Texteingabefeld."},
+      {"text": "&lt;input&gt;", "isCorrect": true, "feedback": "Richtig! Mit dem type-Attribut kann man verschiedene Felder definieren."}
     ]
   },
   {
@@ -193,9 +193,9 @@ let allTopicQuestions = [
     "question": "Was bewirkt das Attribut target='_blank' in einem Link?",
     "topic": "html",
     "options": [
-      {"text": "Öffnet den Link in einem neuen Tab/Fenster", "isCorrect": true, "feedback": "Korrekt! Das ist der Standardweg für externe Links."},
       {"text": "Macht den Link unsichtbar", "isCorrect": false, "feedback": "Nein, das hat keinen Einfluss auf die Sichtbarkeit."},
       {"text": "Löscht den Inhalt des Links", "isCorrect": false, "feedback": "Falsch."},
+      {"text": "Öffnet den Link in einem neuen Tab/Fenster", "isCorrect": true, "feedback": "Korrekt! Das ist der Standardweg für externe Links."},
       {"text": "Öffnet den Link im selben Fenster", "isCorrect": false, "feedback": "Das wäre das Standardverhalten (_self)."}
     ]
   },
@@ -204,10 +204,10 @@ let allTopicQuestions = [
     "question": "Welches HTML-Element definiert den Titel einer Webseite, der im Browser-Tab erscheint?",
     "topic": "html",
     "options": [
-      {"text": "<title>", "isCorrect": true, "feedback": "Richtig! Das <title> Tag gehört in den <head> Bereich."},
-      {"text": "<head>", "isCorrect": false, "feedback": "<head> enthält den Titel, ist aber nicht der Titel selbst."},
-      {"text": "<meta>", "isCorrect": false, "feedback": "<meta> Tags enthalten Informationen für Suchmaschinen, nicht den Tab-Titel."},
-      {"text": "<header>", "isCorrect": false, "feedback": "Der <header> ist ein sichtbarer Bereich auf der Webseite."}
+      {"text": "&lt;head&gt;", "isCorrect": false, "feedback": "&lt;head&gt; enthält den Titel, ist aber nicht der Titel selbst."},
+      {"text": "&lt;meta&gt;", "isCorrect": false, "feedback": "&lt;meta&gt; Tags enthalten Informationen für Suchmaschinen, nicht den Tab-Titel."},
+      {"text": "&lt;title&gt;", "isCorrect": true, "feedback": "Richtig! Das &lt;title&gt; Tag gehört in den &lt;head&gt; Bereich."},
+      {"text": "&lt;header&gt;", "isCorrect": false, "feedback": "Der &lt;header&gt; ist ein sichtbarer Bereich auf der Webseite."}
     ]
   },
   {
@@ -215,7 +215,7 @@ let allTopicQuestions = [
     "question": "Wie schreibt man einen Kommentar in HTML?",
     "topic": "html",
     "options": [
-      {"text": "<!-- Kommentar -->", "isCorrect": true, "feedback": "Genau so werden Kommentare in HTML verfasst."},
+      {"text": "&lt;!-- Kommentar --&gt;", "isCorrect": true, "feedback": "Genau so werden Kommentare in HTML verfasst."},
       {"text": "// Kommentar", "isCorrect": false, "feedback": "Das ist ein einzeiliger Kommentar in JavaScript."},
       {"text": "/* Kommentar */", "isCorrect": false, "feedback": "Das ist die Kommentar-Syntax für CSS und JS."},
       {"text": "' Kommentar", "isCorrect": false, "feedback": "Das wird in HTML nicht als Kommentar erkannt."}
@@ -249,10 +249,10 @@ let allTopicQuestions = [
     "question": "Wie verteilt man in einer Flexbox die Elemente so, dass das erste am Anfang und das letzte am Ende steht, während der Rest gleichmäßig dazwischen verteilt wird?",
     "topic": "css",
     "options": [
-      {"text": "justify-content: space-between;", "isCorrect": true, "feedback": "Korrekt! space-between nutzt den gesamten Platz zwischen den Elementen."},
       {"text": "justify-content: space-around;", "isCorrect": false, "feedback": "Fast, aber space-around lässt auch an den äußeren Rändern Platz."},
       {"text": "justify-content: center;", "isCorrect": false, "feedback": "Nein, das würde alle Elemente in der Mitte zusammenrücken."},
-      {"text": "align-content: stretch;", "isCorrect": false, "feedback": "Falsch, das bezieht sich auf die Querachse bei Mehrzeiligkeit."}
+      {"text": "align-content: stretch;", "isCorrect": false, "feedback": "Falsch, das bezieht sich auf die Querachse bei Mehrzeiligkeit."},
+      {"text": "justify-content: space-between;", "isCorrect": true, "feedback": "Korrekt! space-between nutzt den gesamten Platz zwischen den Elementen."},
     ]
   },
   {
@@ -260,9 +260,9 @@ let allTopicQuestions = [
     "question": "Welcher Selektor spricht ein Element nur an, wenn man mit der Maus darüberfährt?",
     "topic": "css",
     "options": [
-      {"text": ":hover", "isCorrect": true, "feedback": "Korrekt! Das ist eine Pseudoklasse für Interaktionen."},
       {"text": ":active", "isCorrect": false, "feedback": ":active gilt nur während des Klick-Moments."},
       {"text": ":focus", "isCorrect": false, "feedback": ":focus gilt, wenn ein Element (z. B. Input) angewählt ist."},
+      {"text": ":hover", "isCorrect": true, "feedback": "Korrekt! Das ist eine Pseudoklasse für Interaktionen."},
       {"text": ":visited", "isCorrect": false, "feedback": "Das gilt nur für bereits besuchte Links."}
     ]
   },
@@ -271,10 +271,10 @@ let allTopicQuestions = [
   "question": "Ein Element hat 'position: absolute; top: 0;'. Woran orientiert es sich bei der Positionierung?",
   "topic": "css",
   "options": [
-    {"text": "Am nächsten Elternelement mit einer Positionierung ungleich 'static'", "isCorrect": true, "feedback": "Korrekt! Es sucht das nächste Eltern-Element mit 'relative', 'absolute' oder 'fixed'."},
     {"text": "Immer am direkt übergeordneten HTML-Element", "isCorrect": false, "feedback": "Falsch, ist das Eltern-Element 'static' (Standard), wird es ignoriert."},
     {"text": "Immer am Browserfenster (Viewport)", "isCorrect": false, "feedback": "Nein, das wäre das Verhalten von 'position: fixed'."},
-    {"text": "An der aktuellen Textzeile", "isCorrect": false, "feedback": "Falsch, das wäre eher das Verhalten von Inline-Elementen."}
+    {"text": "An der aktuellen Textzeile", "isCorrect": false, "feedback": "Falsch, das wäre eher das Verhalten von Inline-Elementen."},
+    {"text": "Am nächsten Elternelement mit einer Positionierung ungleich 'static'", "isCorrect": true, "feedback": "Korrekt! Es sucht das nächste Eltern-Element mit 'relative', 'absolute' oder 'fixed'."}
   ]
   },
   {
@@ -282,9 +282,9 @@ let allTopicQuestions = [
     "question": "Welche Eigenschaft verhindert, dass ein Flex-Item kleiner wird als sein Inhalt?",
     "topic": "css",
     "options": [
-      {"text": "flex-shrink: 0;", "isCorrect": true, "feedback": "Korrekt! Damit unterbindest du das Schrumpfen des Elements innerhalb einer Flexbox."},
       {"text": "flex-grow: 0;", "isCorrect": false, "feedback": "Das verhindert nur das automatische Ausdehnen."},
       {"text": "overflow: hidden;", "isCorrect": false, "feedback": "Das versteckt nur den überstehenden Inhalt."},
+      {"text": "flex-shrink: 0;", "isCorrect": true, "feedback": "Korrekt! Damit unterbindest du das Schrumpfen des Elements innerhalb einer Flexbox."},
       {"text": "display: block;", "isCorrect": false, "feedback": "Das ändert nur das generelle Verhalten, schützt aber nicht vor Flex-Kompression."}
     ]
   },
@@ -326,9 +326,9 @@ let allTopicQuestions = [
     "question": "Wozu dient eine 'Media Query'?",
     "topic": "css",
     "options": [
-      {"text": "Um CSS-Regeln abhängig von der Bildschirmgröße anzuwenden", "isCorrect": true, "feedback": "Genau! Das ist die Grundlage für Responsive Web Design."},
-      {"text": "Um Videos in die Webseite einzubinden", "isCorrect": false, "feedback": "Dafür nutzt man das HTML <video> Tag."},
+      {"text": "Um Videos in die Webseite einzubinden", "isCorrect": false, "feedback": "Dafür nutzt man das HTML &lt;video&gt; Tag."},
       {"text": "Um Bilder zu komprimieren", "isCorrect": false, "feedback": "CSS kann keine Bilder komprimieren."},
+      {"text": "Um CSS-Regeln abhängig von der Bildschirmgröße anzuwenden", "isCorrect": true, "feedback": "Genau! Das ist die Grundlage für Responsive Web Design."},
       {"text": "Um eine Datenbank-Abfrage zu starten", "isCorrect": false, "feedback": "CSS hat keinen Zugriff auf Datenbanken."}
     ]
   }
