@@ -1,5 +1,6 @@
 let currentQuestionIndex = 0;
 let rightQuestions = 0;
+const allQuestions = questions.length;
 
 function init() {
   showProgress(currentQuestionIndex);
@@ -7,18 +8,15 @@ function init() {
 
 function showProgress(currentIndex) {
   const currentNumber = currentIndex + 1;
-  const allQuestions = questions.length;
-  document.getElementById("progress").innerHTML =
-    `<span>${currentNumber} von ${allQuestions} Fragen</span>`;
-  document.getElementById("progressBarFill").style.width =
-    (currentNumber / allQuestions) * 100 + "%";
+  
+  document.getElementById("progress").innerHTML = `<span>${currentNumber} von ${allQuestions} Fragen</span>`;
+  document.getElementById("progressBarFill").style.width = (currentNumber / allQuestions) * 100 + "%";
 
   showQuestion();
 }
 
 function showQuestion() {
   let question = questions[currentQuestionIndex];
-
   document.getElementById("questionBox").innerHTML = question.question;
   document.getElementById("option1").innerHTML = question.options[0].text;
   document.getElementById("option2").innerHTML = question.options[1].text;
@@ -39,10 +37,8 @@ function answer(selection) {
   }
 
   selectedElement.innerHTML = selectedOption.feedback;
-
   document.getElementById("nextBtn").disabled = false;
-
-  lockAnswers();
+  lockAnswers(selection + 1);
 }
 
 function nextQuestion() {
@@ -51,24 +47,30 @@ function nextQuestion() {
   if (currentQuestionIndex < questions.length) {
     document.getElementById("nextBtn").disabled = true;
     document.getElementById("feedbackBox").classList.add("d-none");
-    resetClasses()
+    resetClasses();
     showProgress(currentQuestionIndex);
   } else {
     showEndScreen();
+    congratulations();
   }
 }
 
-function lockAnswers() {
+function lockAnswers(selectedNumber) {
   for (let i = 1; i <= 4; i++) {
-    document.getElementById(`option${i}`).parentElement.style.pointerEvents = "none";
+    let parentCard = document.getElementById(`option${i}`).parentElement;
+    parentCard.classList.add("no-pointer");
+    if (i !== selectedNumber) {
+      parentCard.classList.add("is-inactive");
+    }
   }
 }
 
 function resetClasses() {
   for (let i = 1; i <= 4; i++) {
     let el = document.getElementById(`option${i}`);
+    let parentCard = el.parentElement;
     el.classList.remove("correct", "wrong");
-    el.parentElement.style.pointerEvents = "auto";
+    parentCard.classList.remove("no-pointer", "is-inactive");
   }
 }
 
@@ -79,19 +81,22 @@ function showEndScreen() {
     for (let i = 1; i <= 4; i++) {
         document.getElementById(`option${i}`).parentElement.classList.add("d-none");
     }
-
     document.getElementById("questionBox").innerHTML = getResultHtml();
 }
 
 function getResultHtml(){
     return `
         <div class="text-center">
-            <h2>Quiz beendet!</h2>
-            <p>Vielen Dank fürs Mitmachen.</p>
+            <h2>Quiz beendet</h2>
+            <p>Du hast <b>${rightQuestions}</b> von <b>${allQuestions}</b> Fragen richtig beantwortet</p>
             <div class="cup">
                 <img src="./imgs/cup.PNG" alt="Ein Pokal">
             </div>
             <button class="main-btn shadow" onclick="location.reload()">Nochmal spielen</button>
         </div>
     `;
+}
+
+function congratulations() {
+  confetti({particleCount: 200, spread: 70, origin: { y: 0.6 }, zIndex: 9999});
 }

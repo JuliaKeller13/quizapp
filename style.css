@@ -79,3 +79,20 @@ body {
   display: none;
 }
 
+.no-pointer {
+    pointer-events: none;
+}
+
+.is-inactive {
+    background-color: #dadde09d !important;
+    opacity: 0.6;
+    filter: grayscale(1);
+}
+
+main canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
