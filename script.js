@@ -2,6 +2,9 @@ let currentQuestionIndex = 0;
 let rightQuestions = 0;
 let questions = [];
 const quizContainer = document.getElementById("quizContainer");
+let audioRight = new Audio('audio/right.mp3');
+let audioWrong = new Audio('audio/wrong.mp3');
+let audioConfetti = new Audio('audio/confetti.mp3');
 
 function init() {
   renderQuizStartCard();
@@ -84,9 +87,11 @@ function answer(selection) {
 
   if (selectedOption.isCorrect) {
     selectedElement.classList.add("correct");
+    audioRight.play();
     rightQuestions++;
   } else {
     selectedElement.classList.add("wrong");
+    audioWrong.play();
   }
 
   selectedElement.innerHTML = selectedOption.feedback;
@@ -105,6 +110,7 @@ function nextQuestion() {
     showQuestion();
   } else {
     showEndScreen();
+    audioConfetti.play();
     congratulations();
   }
 }
